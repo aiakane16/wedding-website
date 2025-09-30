@@ -66,6 +66,7 @@ export function RSVPForm() {
         description: "We've received your RSVP. We can't wait to celebrate with you!",
       })
     } catch (error) {
+      console.log('test', error)
       toast({
         title: "Oops!",
         description: error instanceof Error ? error.message : "Something went wrong. Please try again.",
