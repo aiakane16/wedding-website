@@ -30,6 +30,8 @@ export async function POST(request: NextRequest) {
 
     // Forward to webhook if configured
     const webhookUrl = process.env.RSVP_WEBHOOK_URL
+    const webhookSecret = process.env.RSVP_WEBHOOK_SECRET
+    const payload = webhookSecret ? { ...webhookData, secret: webhookSecret } : webhookData
 
     if (webhookUrl) {
       try {
@@ -37,8 +39,9 @@ export async function POST(request: NextRequest) {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
+            ...(webhookSecret ? { "x-webhook-secret": webhookSecret } : {}),
           },
-          body: JSON.stringify(webhookData),
+          body: JSON.stringify(payload),
         })
 
         if (!webhookResponse.ok) {
