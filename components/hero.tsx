@@ -22,7 +22,7 @@ export function Hero() {
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <Image src="/images/hero.jpg" alt="Ken and Mia" fill className="object-cover" priority quality={90} />
+        <Image src="/images/hero.jpg" alt="Bryan and Mia" fill className="object-cover" priority quality={90} />
         <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background/80" />
       </div>
 
@@ -32,7 +32,7 @@ export function Hero() {
           <div className="space-y-4">
             <Heart className="w-12 h-12 mx-auto text-primary animate-pulse" />
             <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-foreground text-balance">
-              Ken & Mia
+              Bryan & Mia
             </h1>
             <div className="flex items-center justify-center gap-4">
               <div className="h-px w-12 bg-primary" />
